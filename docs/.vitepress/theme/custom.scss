@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(
+    120deg,
+    #f0eff0,
+    #41d1ff
+  );
+  --search-text-color: #000000;
+  --vp-nav-color: #000000;
+  --vp-c-text-1: #000000;
+  --vp-c-text-2: #577ac7;
+}
+:root.dark {
+  --vp-nav-color: #ffffff;
+  --search-text-color: #ffffff;
+  --search-text-color: #ffffff;
+  --vp-c-text-1: #fff;
+  --vp-c-text-2: #fff;
+}

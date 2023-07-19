@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: mFont;
+  src: url("../docs/public/Lucida Handwriting Italic.ttf");
+}
+
+.Layout:has(.VPHome) {
+  background-image: url("./public/cover@xl.webp");
+  background-repeat: no-repeat;
+  background-position: 0px 70px;
+  background-size: 100%;
+}
+
+.VPButton.brand {
+  background-color: #076cf0 !important;
+  color: white !important;
+  border: 1px solid white !important;
+}
+
+.VPButton.alt {
+  background-color: #076cf0 !important;
+  color: white !important;
+  border: 1px solid white !important;
+}
+
+.VPButton.medium {
+  border-radius: 4px !important;
+  font-size: 20px;
+}
+
+.DocSearch-Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  transition: border-color 0.25s;
+  background: transparent;
+}
+.DocSearch-Button:hover {
+  background-color: #6f98ef7f;
+  transition: all 0.25s;
+}
+
+.logo {
+  // 放大两倍
+  transform: scale(2);
+  position: relative;
+  z-index: -1;
+}
+.VPImage {
+  z-index: 10 !important;
+}
+@media (min-width: 960px) {
+  .VPNavBar.fill[data-v-cf6e7c5e]:not(.has-sidebar) {
+    // border-bottom-color: var(--vp-c-gutter);
+  }
+
+  .title,
+  .VPNavBarMenuGroup > button > span,
+  .VPNavBarMenuLink {
+    color: var(--vp-nav-color) !important;
+  }
+  .VPNavBarTitle {
+    font-family: "mFont";
+  }
+  .VPHomeHero .text {
+    color: white !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .DocSearch-Button {
+    justify-content: flex-start;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 0 10px 0 12px;
+    width: 100%;
+    height: 40px;
+    background-color: var(--vp-c-bg-alt);
+  }
+  // 搜索框文字颜色
+  .DocSearch-Button-Keys {
+    color: var(--search-text-color);
+  }
+  .DocSearch-Search-Icon {
+    color: var(--search-text-color);
+  }
+  .DocSearch-Button-Placeholder {
+    color: var(--search-text-color);
+  }
+}
+
+@media (max-width: 768px) {
+  .DocSearch-Button-Keys {
+    display: none;
+  }
+  .VPNavBarHamburger {
+    height: 32px !important;
+    width: 32px !important;
+    border-radius: 4px;
+  }
+  .DocSearch-Button-Keys {
+    color: var(--search-text-color);
+  }
+  .DocSearch-Search-Icon {
+    color: var(--search-text-color);
+  }
+  .DocSearch-Button-Placeholder {
+    color: var(--search-text-color);
+  }
+}
