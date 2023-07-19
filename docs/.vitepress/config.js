@@ -1,5 +1,6 @@
 module.exports = {
   title: "Eagon Home",
+  base: "/",
   lastUpdated: true, // 文章最后更新时间
   description: "https://github.com/Eagon7/Nest-base-drill",
   themeConfig: {
