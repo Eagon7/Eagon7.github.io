@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 # 忽略错误
 set -e
 
@@ -5,12 +7,18 @@ set -e
 npm run docs:build
 
 # 进入待发布的目录
-cd docs/.vitepress/dist
+cd ../docs/.vitepress/dist
 
+# 如果是发布到自定义域名
+# echo 'www.example.com' > CNAME
 
 git init
 git add -A
 git commit -m 'deploy'
 
+git push -f git@github.com:Eagon7/Eagon7.github.io.git main
+
+# 如果是部署到 https://<USERNAME>.github.io/<REPO>
+# git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
 
 cd -

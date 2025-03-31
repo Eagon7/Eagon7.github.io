@@ -1,16 +1,15 @@
 <script setup>
 import keji from "./keji/index.vue";
 import { useRouter } from "vitepress";
-import SVGnest from "../../public/svg/SVGnest";
-import SVGvue from "../../public/svg/SVGvue";
-import SVGreact from "../../public/svg/SVGreact";
+import SVGnest from "/public/svg/SVGnest";
+import SVGvue from "/public/svg/SVGvue";
+import SVGreact from "/public/svg/SVGreact";
+
 const svg = SVGnest;
 const vueSvg = SVGvue;
-
 const router = useRouter();
 const handleClick = (url) => {
   router.go(url);
-  //
 };
 </script>
 <template>
@@ -19,7 +18,7 @@ const handleClick = (url) => {
       <div class="drop" style="--clr: #ff0f5b">
         <div
           class="content absolute z-10"
-          @click="handleClick('/articles/nestjs/')"
+          @click="handleClick('/articles/BackEnd/NestJs/')"
         >
           <h2 v-html="svg"></h2>
           <p style="font-weight: 800">NEST</p>
@@ -35,7 +34,7 @@ const handleClick = (url) => {
         </div>
       </div>
       <div class="drop" style="--clr: #01b4ff">
-        <div class="content" @click="handleClick('/articles/vue/first/')">
+        <div class="content" @click="handleClick('/articles/FontEnd/react/')">
           <h2 v-html="SVGreact"></h2>
           <p style="font-weight: 800">React</p>
           <a href="#"></a>

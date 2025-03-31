@@ -12,9 +12,15 @@ class UserService {
   }
 }
 
+class AdminService{
+  getList(id){
+    // 获取管理员的逻辑
+  }
+}
+
 class Controller {
   constructor() {
-    this.Service = new UserService();
+    this.Service = new UserService(); // 当前Service只能获取用户的逻辑，但是我想再获取管理员的逻辑时就需要新注册一个类
   }
 
   read(id) {
@@ -22,17 +28,6 @@ class Controller {
     const result = this.Service.getList(id);  
   }
 }
-```
-
-``` js
-export default {
-  data () {
-    return {
-      msg: 'Focused!' // [!code focus]
-    }
-  }
-}
-
 ```
 
 此时controller 和 UserService 存在了强耦合的关联，无法复用。若我们想用AuthService时必须新注册一个类来实现。并且需要改动getUser里面的代码。那我们此时就需要解决这个问题
@@ -56,16 +51,16 @@ class Controller {
 
 ```typescript
 abstract class Service {
- get
+ getList : (id) => void;
 }
 class AuthService{
  getList(id){
-  //xxx
+  return 'auth'
  }
 }
 class UserService{
  getList(id){
-  //xxx
+  return 'user'
  }
 }
 class Controller {
@@ -99,6 +94,9 @@ const instance = new Constroller(new AuthService)
 2. 容器需要拥有register方法用来管理容器的注册
 3. 容器需要有一个解析的方法 （从容器中解析已注册的依赖项并注入)
 让所有的依赖项统一管理注册解耦了对象之间的强依赖关系
+::: tip
+注册的时候不需要一个一个new生成多个实例了，而是直接调用实例方法进行注册
+:::
 
 ## 案例
 
@@ -123,9 +121,10 @@ const instance = new Constroller(new AuthService)
       throw new Error(`依赖 ${key}未被注册到容器，请先注册到容器再去使用`);
     }
   }
-
+  // 注册
   const container = new Container();
   container.register("AuthService", new AuthService());
+  // 使用
   const controller = new Controller(container.resolve("AuthService"));
 };
 ```

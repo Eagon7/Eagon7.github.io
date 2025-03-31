@@ -1,5 +1,5 @@
 // node_modules/vanilla-tilt/lib/vanilla-tilt.es2015.js
-var VanillaTilt = class {
+var VanillaTilt = class _VanillaTilt {
   constructor(element, settings = {}) {
     if (!(element instanceof Node)) {
       throw "Can't initialize VanillaTilt because " + element + " is not a Node.";
@@ -22,11 +22,11 @@ var VanillaTilt = class {
     this.element = element;
     this.settings = this.extendSettings(settings);
     this.reverse = this.settings.reverse ? -1 : 1;
-    this.resetToStart = VanillaTilt.isSettingTrue(this.settings["reset-to-start"]);
-    this.glare = VanillaTilt.isSettingTrue(this.settings.glare);
-    this.glarePrerender = VanillaTilt.isSettingTrue(this.settings["glare-prerender"]);
-    this.fullPageListening = VanillaTilt.isSettingTrue(this.settings["full-page-listening"]);
-    this.gyroscope = VanillaTilt.isSettingTrue(this.settings.gyroscope);
+    this.resetToStart = _VanillaTilt.isSettingTrue(this.settings["reset-to-start"]);
+    this.glare = _VanillaTilt.isSettingTrue(this.settings.glare);
+    this.glarePrerender = _VanillaTilt.isSettingTrue(this.settings["glare-prerender"]);
+    this.fullPageListening = _VanillaTilt.isSettingTrue(this.settings["full-page-listening"]);
+    this.gyroscope = _VanillaTilt.isSettingTrue(this.settings.gyroscope);
     this.gyroscopeSamples = this.settings.gyroscopeSamples;
     this.elementListener = this.getElementListener();
     if (this.glare) {
@@ -374,7 +374,7 @@ var VanillaTilt = class {
     }
     elements.forEach((element) => {
       if (!("vanillaTilt" in element)) {
-        element.vanillaTilt = new VanillaTilt(element, settings);
+        element.vanillaTilt = new _VanillaTilt(element, settings);
       }
     });
   }

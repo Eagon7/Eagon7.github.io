@@ -91,13 +91,13 @@ const partners = [
   <div>
     <VPTeamPage>
       <VPTeamPageTitle>
-        <template #title>Our Team✨</template>
+        <template #title>Our Team🍺</template>
         <template #lead>HprismaD</template>
       </VPTeamPageTitle>
       <VPTeamMembers size="medium" :members="coreMembers" />
       <VPTeamPageSection>
         <template #title>后盾人</template>
-        <template #lead>🪐感谢陪伴</template>
+        <template #lead>🪐</template>
         <template #members>
           <VPTeamMembers size="small" :members="partners" />
         </template>

@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import VanillaTilt from "vanilla-tilt";
-import { onBeforeUpdate, getCurrentInstance, watch, ref, onMounted } from "vue";
+import { onMounted, ref } from "vue";
 
 const props = defineProps(["title", "num", "content", "talo"]);
 const card = ref<HTMLElement | null>(null);
 const content = ref<HTMLElement | null>(null);
 const emits = defineEmits(["closeTalo"]);
+
 const animationEnd = () => {
   if (content.value === null) return;
   content.value.style.transform = "translateY(0)";
@@ -13,7 +14,6 @@ const animationEnd = () => {
 };
 
 onMounted(() => {
-  console.log("mount");
   VanillaTilt.init(card.value as any, {
     max: 15,
     speed: 400,
