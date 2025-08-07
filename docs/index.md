@@ -9,10 +9,10 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /articles/basic/
+      link: /articles/FontEnd/react/
     - theme: alt
       text: View on Resume
-      link: /Resume/index
+      link: /Resume/
 
 ---
 
